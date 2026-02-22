@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Level1 extends World {
 
-    // Main bodies in the level
+    // Main bodies in the level (the character and portal)
     private Player player;
     private Portal portal;
 
@@ -65,7 +65,7 @@ public class Level1 extends World {
         portal = new Portal(this);
         portal.setPosition(new Vec2(18, -12));
 
-        // Collisions
+        // Collisions e.g. picking up the coins when running into them
         player.addCollisionListener(new CoinPickup(this));
         player.addCollisionListener(new PortalContact(this));
 
