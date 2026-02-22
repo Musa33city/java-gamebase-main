@@ -12,9 +12,9 @@ public class PortalContact implements CollisionListener {
     @Override
     public void collide(CollisionEvent e) {
         if (e.getOtherBody() instanceof Portal) {
-            if (level.isPortalUnlocked()) {
+            if (level.isPortalUnlocked() && !level.isGameOver()) {
                 level.winLevel();
-            }
+            } // above prevents the player from winning via the portal after they lost
         }
     }
 }
